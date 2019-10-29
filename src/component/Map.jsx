@@ -7,12 +7,12 @@ class Map extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      xC: 2,
-      yC: 4.2,
+      xC: 1.5,
+      yC: 4.05,
       canJump: true,
       transition: true,
       xO: 12,
-      yO: 4
+      yO: 4.05
     };
     this.loopObstacle();
   }
@@ -26,9 +26,9 @@ class Map extends React.Component {
   ];
 
   loopObstacle() {
-    if (this.state.xO === -4) {
+    if (this.state.xO === -2) {
       this.setState({
-        xO: this.state.xO + 17,
+        xO: this.state.xO + 15,
         transition: false
       });
     } else {
@@ -37,7 +37,7 @@ class Map extends React.Component {
         transition: true
       });
     }
-    setTimeout(this.loopObstacle.bind(this), 100);
+    setTimeout(this.loopObstacle.bind(this), 250);
   }
 
   componentDidMount() {
@@ -47,17 +47,17 @@ class Map extends React.Component {
   }
 
   getInput = event => {
-    const keyCode = event.keyCode;
-    if (keyCode === 32 && this.state.canJump) {
+    const key = event.code;
+    if (key === "Space" && this.state.canJump) {
       this.setState({
-        yC: 0.5,
+        yC: 3,
         canJump: false
       });
       setTimeout(() => {
         this.setState({
-          yC: 4.2
+          yC: 4.05
         });
-      }, 420);
+      }, 300);
       setTimeout(() => {
         this.setState({
           canJump: true
