@@ -1,0 +1,17 @@
+.map {
+  position: relative;
+  display: flex;
+  flex-flow: wrap row;
+  width: 832px;
+  height: 320px;
+  border-radius: 30px;
+  margin: 10px auto;
+  //background-image: url("../assets/2.gif.f3174444fbed6d52ab7ec47ceae67600.gif");
+  background-color: purple;
+  overflow: hidden;
+
+  div {
+    width: 64px;
+    height: 64px;
+  }
+}
